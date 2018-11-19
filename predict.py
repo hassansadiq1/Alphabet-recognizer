@@ -1,8 +1,6 @@
-# It takes grayscale images and predict alphabet
 import numpy as np
-from keras.models import load_model
 from scipy.misc import imresize
-model = load_model('.h5')
+from sklearn import preprocessing
 
 def preprocess_image(img):  
   img = imresize(img,(28,28))
@@ -10,8 +8,11 @@ def preprocess_image(img):
   result = np.expand_dims(img,axis=3)
   return result
 
-image = None#load your image
-pre_image = preprocess_image(image)
-y = model.predict(pre_image)
-y = np.argmax(y,axis = 1)
-print(y)
+def encoding(prediction):
+  label_encoder = preprocessing.LabelEncoder()
+  label_encoder.fit(['A','B','C','D','E','F','G','H','I','J','K','L','M',
+        'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'])
+  result = label_encoder.inverse_transform([prediction])
+  if len(prediction) = 1:
+    result = result[0]
+  return result
