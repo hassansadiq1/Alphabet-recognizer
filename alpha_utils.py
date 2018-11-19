@@ -8,7 +8,7 @@ def preprocess_image(img):
   result = np.expand_dims(img,axis=3)
   return result
 
-def encoding(prediction):
+def decoder(prediction):
   label_encoder = preprocessing.LabelEncoder()
   label_encoder.fit(['A','B','C','D','E','F','G','H','I','J','K','L','M',
         'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'])
