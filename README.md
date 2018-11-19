@@ -4,7 +4,7 @@ Clone this repository
 https://github.com/hassansadiq1/Alphabet-recognizer.git
 
 Load pretrained model
-
+```python
 from keras.models import load_model
 
 model = load_model('alphabets.h5')
