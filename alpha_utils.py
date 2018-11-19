@@ -9,10 +9,11 @@ def preprocess_image(img):
   return result
 
 def decoder(prediction):
+  x = np.argmax(prediction, axis = 1)
   label_encoder = preprocessing.LabelEncoder()
   label_encoder.fit(['A','B','C','D','E','F','G','H','I','J','K','L','M',
         'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'])
-  result = label_encoder.inverse_transform([prediction])
+  result = label_encoder.inverse_transform([x])
   if len(prediction) == 1:
     result = result[0]
   return result
