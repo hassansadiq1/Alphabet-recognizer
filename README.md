@@ -9,7 +9,7 @@ from keras.models import load_model
 model = load_model('alphabets.h5')
 ```
 Import some useful fuctions and perform operations as follows
-python```
+```python
 from alpha_utils.py import preprocess_image,decoder
 image = None#load image
 pre_image = preprocess_image(image)
