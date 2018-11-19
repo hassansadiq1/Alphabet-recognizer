@@ -13,6 +13,6 @@ def decoder(prediction):
   label_encoder.fit(['A','B','C','D','E','F','G','H','I','J','K','L','M',
         'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'])
   result = label_encoder.inverse_transform([prediction])
-  if len(prediction) = 1:
+  if len(prediction) == 1:
     result = result[0]
   return result
