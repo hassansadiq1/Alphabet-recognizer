@@ -4,7 +4,9 @@ from sklearn import preprocessing
 
 
 def preprocess_image(img):
+#  img = np.invert(img)
   img = np.array(img, dtype=np.uint8)
+  img = img * 255
   img = imresize(img,(28,28))
   img = np.expand_dims(img,axis=0)
   result = np.expand_dims(img,axis=3)
@@ -17,6 +19,6 @@ def decoder(prediction):
                      'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
                      '0','1','2','3','4','5','6','7','8','9'])
   result = label_encoder.inverse_transform([x])
-  if len(prediction) == 1:
-    result = result[0]
+  result = result[0]
   return result
+
