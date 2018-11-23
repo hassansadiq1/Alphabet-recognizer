@@ -4,7 +4,7 @@ from sklearn import preprocessing
 
 
 def preprocess_image(img):
-#  img = np.invert(img)
+  img = np.invert(img)
   img = np.array(img, dtype=np.uint8)
   img = img * 255
   img = imresize(img,(28,28))
