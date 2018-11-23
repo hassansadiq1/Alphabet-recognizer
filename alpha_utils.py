@@ -1,9 +1,9 @@
 import numpy as np
-from scipy.misc import imresize
+import cv2 as cv
 from sklearn import preprocessing
 
 def preprocess_image(img):  
-  img = imresize(img,(28,28))
+  img = cv.resize(img,None,(28,28), interpolation = cv.INTER_CUBIC)
   img = np.expand_dims(img,axis=0)
   result = np.expand_dims(img,axis=3)
   return result
